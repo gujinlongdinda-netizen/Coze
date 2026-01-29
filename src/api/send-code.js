@@ -2,7 +2,8 @@ export const runtime = 'nodejs';
 
 export async function POST(req) {
   try {
-    const { email } = await req.json();
+    const body = await req.json();
+    const email = body?.email;
 
     if (!email) {
       return new Response(
@@ -15,7 +16,6 @@ export async function POST(req) {
       throw new Error('BREVO_API_KEY is missing');
     }
 
-    // 👉 这里先不调用 Brevo，做“接口存活测试”
     console.log('Send code to:', email);
 
     return new Response(
