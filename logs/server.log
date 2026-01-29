@@ -1,0 +1,153 @@
+
+> project_template_react@0.0.1 dev /workspace/projects
+> concurrently "pnpm dev:client" "pnpm dev:server"
+
+[1] 
+[1] > project_template_react@0.0.1 dev:server /workspace/projects
+[1] > tsx watch server/src/index.ts
+[1] 
+[0] 
+[0] > project_template_react@0.0.1 dev:client /workspace/projects
+[0] > vite --host --port 5000
+[0] 
+[0] 
+[0]   VITE v6.3.5  ready in 834 ms
+[0] 
+[0]   ➜  Local:   http://localhost:5000/
+[0]   ➜  Network: http://9.129.98.245:5000/
+[0]   ➜  Network: http://169.254.97.11:5000/
+[1] 知笔后端服务运行在端口 5001
+[1] 健康检查: http://localhost:5001/health
+[0] Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+[0]   npx update-browserslist-db@latest
+[0]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[1] 验证码发送到 test@example.com: 970065
+[1] (node:1746) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[1] In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+[1] 
+[1] To prepare for this change:
+[1] - If you want the current behavior, explicitly use 'sslmode=verify-full'
+[1] - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+[1] 
+[1] See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+[1] (Use `node --trace-warnings ...` to show where the warning was created)
+[1] 登录失败: DrizzleQueryError: Failed query: select "id", "email", "remaining_words", "total_words_used", "is_first_user", "created_at", "updated_at" from "users" where "users"."email" = $1
+[1] params: test@example.com
+[1]     at NodePgPreparedQuery.queryWithCache (/node_modules/.pnpm/drizzle-orm@0.45.1_pg@8.17.2/node_modules/src/pg-core/session.ts:73:11)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[1]     at async <anonymous> (/node_modules/.pnpm/drizzle-orm@0.45.1_pg@8.17.2/node_modules/src/node-postgres/session.ts:154:19)
+[1]     at async UserManager.getUserByEmail (/workspace/projects/server/src/storage/database/userManager.ts:20:20)
+[1]     at async <anonymous> (/workspace/projects/server/src/api/auth.ts:68:16) {
+[1]   query: 'select "id", "email", "remaining_words", "total_words_used", "is_first_user", "created_at", "updated_at" from "users" where "users"."email" = $1',
+[1]   params: [ 'test@example.com' ],
+[1]   cause: error: relation "users" does not exist
+[1]       at /node_modules/.pnpm/pg-pool@3.11.0_pg@8.17.2/node_modules/pg-pool/index.js:45:11
+[1]       at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[1]       at async <anonymous> (/node_modules/.pnpm/drizzle-orm@0.45.1_pg@8.17.2/node_modules/src/node-postgres/session.ts:161:13)
+[1]       at async NodePgPreparedQuery.queryWithCache (/node_modules/.pnpm/drizzle-orm@0.45.1_pg@8.17.2/node_modules/src/pg-core/session.ts:71:12)
+[1]       at async <anonymous> (/node_modules/.pnpm/drizzle-orm@0.45.1_pg@8.17.2/node_modules/src/node-postgres/session.ts:154:19)
+[1]       at async UserManager.getUserByEmail (/workspace/projects/server/src/storage/database/userManager.ts:20:20)
+[1]       at async <anonymous> (/workspace/projects/server/src/api/auth.ts:68:16) {
+[1]     length: 105,
+[1]     severity: 'ERROR',
+[1]     code: '42P01',
+[1]     detail: undefined,
+[1]     hint: undefined,
+[1]     position: '111',
+[1]     internalPosition: undefined,
+[1]     internalQuery: undefined,
+[1]     where: undefined,
+[1]     schema: undefined,
+[1]     table: undefined,
+[1]     column: undefined,
+[1]     dataType: undefined,
+[1]     constraint: undefined,
+[1]     file: 'parse_relation.c',
+[1]     line: '1452',
+[1]     routine: 'parserOpenTable'
+[1]   }
+[1] }
+[1] 验证码发送到 test2@example.com: 262875
+[1] 登录失败: ReferenceError: sql is not defined
+[1]     at UserManager.increaseRemainingWords (/workspace/projects/server/src/storage/database/userManager.ts:72:25)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[1]     at async <anonymous> (/workspace/projects/server/src/api/auth.ts:77:7)
+[1] 4:05:15 PM [tsx] change in ./server/src/storage/database/userManager.ts Restarting...
+[1] c知笔后端服务运行在端口 5001
+[1] 健康检查: http://localhost:5001/health
+[1] 验证码发送到 test3@example.com: 327979
+[1] (node:1870) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[1] In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+[1] 
+[1] To prepare for this change:
+[1] - If you want the current behavior, explicitly use 'sslmode=verify-full'
+[1] - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+[1] 
+[1] See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+[1] (Use `node --trace-warnings ...` to show where the warning was created)
+[0]  ELIFECYCLE  Command failed with exit code 143.
+[0] pnpm dev:client exited with code 143
+[1] 验证码发送到 test1769156481950@example.com: 488753
+[1] 验证码发送到 test1769156529582@example.com: 654557
+[1] AI处理失败: APIError: code=190000007 message=no permission {msg}
+[1] cause=token validation failed: failed to parse token: token contains an invalid number of segments
+[1]     at Stream.iterator (/node_modules/.pnpm/openai@6.16.0_zod@4.3.5/node_modules/openai/src/core/streaming.ts:69:21)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[1]     at async ChatOpenAICompletions._streamResponseChunks (/node_modules/.pnpm/@langchain+openai@1.2.3_@langchain+core@1.1.16_openai@6.16.0_zod@4.3.5__/node_modules/@langchain/openai/src/chat_models/completions.ts:317:22)
+[1]     at async ChatOpenAI._streamResponseChunks (/node_modules/.pnpm/@langchain+openai@1.2.3_@langchain+core@1.1.16_openai@6.16.0_zod@4.3.5__/node_modules/@langchain/openai/src/chat_models/index.ts:679:5)
+[1]     at async ChatOpenAI._streamIterator (/node_modules/.pnpm/@langchain+core@1.1.16_openai@6.16.0_zod@4.3.5_/node_modules/@langchain/core/src/language_models/chat_models.ts:347:26) {
+[1]   status: undefined,
+[1]   headers: Headers {
+[1]     server: 'volc-dcdn',
+[1]     'content-type': 'text/event-stream',
+[1]     'transfer-encoding': 'chunked',
+[1]     connection: 'keep-alive',
+[1]     date: 'Fri, 23 Jan 2026 08:22:09 GMT',
+[1]     'cache-control': 'no-cache',
+[1]     'x-tt-logid': '20260123162209B12513FEA63053E387B8',
+[1]     'server-timing': 'inner; dur=20, cdn-cache;desc=MISS, origin;dur=33, edge;dur=0, tt_agw; dur=9',
+[1]     'strict-transport-security': 'max-age=31536000; includeSubDomains',
+[1]     'x-tt-trace-host': '01f3289b31d3cc3a3d9d6f6abb9eb2b6f169a5d254238d1679ceb8ac8a9207f9f8debba33f654310d16e4ce8996b2e4db6a34a1aed95a9216d81d883ef9ed3ee8b2aa9f84a58c03a452cf92d6a5356024237dc07d1f06b77aff02a6c2d7699c485d9f496e737fda0e55babd29f29715c0e',
+[1]     'x-tt-trace-tag': 'id=5',
+[1]     'x-tt-trace-id': '00-e9f25013030102bf7adfa654eabd0000-e9f25013030102bf-01',
+[1]     'x-tt-timestamp': '1769156529.812',
+[1]     via: 'n120-220-145-008.sdjncm04-container.Creative',
+[1]     'x-request-ip': '115.191.1.199',
+[1]     'x-dsa-trace-id': '1769156529371fdea769e580a2e45ca93621d77b38',
+[1]     'x-dsa-origin-status': '200'
+[1]   },
+[1]   requestID: null,
+[1]   error: {
+[1]     code: 'ErrNoPermission',
+[1]     message: 'code=190000007 message=no permission {msg}\n' +
+[1]       'cause=token validation failed: failed to parse token: token contains an invalid number of segments',
+[1]     type: 'Unauthorized',
+[1]     request_id: '20260123162209B12513FEA63053E387B8'
+[1]   },
+[1]   code: 'ErrNoPermission',
+[1]   param: undefined,
+[1]   type: 'Unauthorized'
+[1] }
+[1] 4:22:38 PM [tsx] change in ./server/src/api/process.ts Restarting...
+[1] c知笔后端服务运行在端口 5001
+[1] 健康检查: http://localhost:5001/health
+[1] 验证码发送到 test1769156573993@example.com: 150344
+[1] (node:2188) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[1] In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+[1] 
+[1] To prepare for this change:
+[1] - If you want the current behavior, explicitly use 'sslmode=verify-full'
+[1] - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+[1] 
+[1] See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+[1] (Use `node --trace-warnings ...` to show where the warning was created)
+[1] 5:56:43 PM [tsx] change in ./server/src/api/auth.ts Restarting...
+[1] c知笔后端服务运行在端口 5001
+[1] 健康检查: http://localhost:5001/health
+[1] 验证码发送到 test@example.com: 793260
+[1] 6:29:21 PM [tsx] change in ./server/src/index.ts Restarting...
+[1] c知笔后端服务运行在端口 5001
+[1] 健康检查: http://localhost:5001/health
+[1] 6:29:25 PM [tsx] change in ./server/src/index.ts Restarting...
+[1] c知笔后端服务运行在端口 5001
+[1] 健康检查: http://localhost:5001/health
